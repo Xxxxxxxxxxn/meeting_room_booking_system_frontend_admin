@@ -55,19 +55,19 @@ export function UserManage() {
             title: '注册时间',
             dataIndex: 'createTime'
         },
-        {
-            title: '状态',
-            dataIndex: 'isFrozen',
-            render: (_, record) => (
-                record.isFrozen ? <Badge status="success">已冻结</Badge> : ''
-            )
-        },
-        {
-            title: '操作',
-            render: (_, record) => (
-                <a href="#" onClick={() => {freezeUser(record.id)}}>冻结</a>
-            )
-        }
+        // {
+        //     title: '状态',
+        //     dataIndex: 'isFrozen',
+        //     render: (_, record) => (
+        //         record.isFrozen ? <Badge status="success">已冻结</Badge> : ''
+        //     )
+        // },
+        // {
+        //     title: '操作',
+        //     render: (_, record) => (
+        //         <a href="#" onClick={() => {freezeUser(record.id)}}>冻结</a>
+        //     )
+        // }
     ], []);
     
     const freezeUser = async (id: number) => {
