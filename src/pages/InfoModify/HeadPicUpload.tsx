@@ -1,6 +1,7 @@
 import { InboxOutlined } from "@ant-design/icons";
 import { message } from "antd";
 import Dragger, { DraggerProps } from "antd/es/upload/Dragger";
+import { address } from "../constant";
 
 interface HeadPicUploadProps {
     value?: string;
@@ -11,7 +12,7 @@ let onChange: Function;
 
 const props: DraggerProps = {
     name: 'file',
-    action: 'http://localhost:3005/user/upload',
+    action: address+'/user/upload',
     onChange(info) {
         const { status } = info.file;
         if (status === 'done') {
@@ -35,7 +36,7 @@ export function HeadPicUpload(props: HeadPicUploadProps) {
     onChange = props.onChange!
 
     return props?.value ? <div>
-        <img src={'http://localhost:3005/' + props.value} alt="头像" width="100" height="100"/>
+        <img src={address+'?/name=' + props.value} alt="头像" width="100" height="100"/>
         {dragger}
     </div>: <div>
         {dragger}
